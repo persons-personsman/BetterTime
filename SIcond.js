@@ -6,8 +6,6 @@ var hectond = 0;
 var kilond = 0;
 var megond = 0;
 var gigond = 0;
-var terond = 0;
-var petond = 0;
 
 String.prototype.InsertAt=function(CharToInsert,Position){
      return this.slice(0,Position) + CharToInsert + this.slice(Position)
