@@ -1,0 +1,66 @@
+//Amazing variables
+var SIcond = 0;
+var SIcondUNIT = (1000000000000000000000000000000000000000000000/539000000000000000000000000000000000000000000);
+var decond = 0;
+var hectond = 0;
+var kilond = 0;
+var megond = 0;
+var gigond = 0;
+var terond = 0;
+var petond = 0;
+
+String.prototype.InsertAt=function(CharToInsert,Position){
+     return this.slice(0,Position) + CharToInsert + this.slice(Position)
+}
+function reverse(s){
+    return s.split("").reverse().join("");
+}
+
+//Useless
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+//Counter or Stopwatch
+function SIcounter() {
+setInterval(function() {
+  if (SIcond < 9) {
+    SIcond++;
+  } else {
+    SIcond = 0;
+    hectond++;
+  }
+  if (hectond > 9) {
+    hectond = 0;
+    kilond++;
+  }
+  if (kilond > 9) {
+    kilond = 0;
+    megond++;
+  }
+  if (megond > 9) {
+    megond = 0;
+    gigond++;
+  }
+  document.getElementById("counter").innerHTML = (gigond + ":" + megond + ":" + kilond + ":" + hectond + ":" + SIcond);
+}, SIcondUNIT * 1000);
+}
+
+//Get current date
+function SItime() {
+setInterval(function() {
+    var date = new Date();
+    //Possibly redundent
+    var SIcondDate = date.getTime() * 500 / 1000000 + '';
+    SIcondDate = SIcondDate.substring(0, SIcondDate.indexOf("."));
+    SIcondDate = reverse(SIcondDate).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
+    document.getElementById("time").innerHTML = reverse(SIcondDate);
+}, SIcondUNIT * 1000);
+}
+
+
