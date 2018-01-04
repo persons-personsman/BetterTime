@@ -12,18 +12,9 @@ var petond = 0;
 String.prototype.InsertAt=function(CharToInsert,Position){
      return this.slice(0,Position) + CharToInsert + this.slice(Position)
 }
+
 function reverse(s){
     return s.split("").reverse().join("");
-}
-
-//Useless
-function sleep(milliseconds) {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1e7; i++) {
-    if ((new Date().getTime() - start) > milliseconds){
-      break;
-    }
-  }
 }
 
 //Counter or Stopwatch
@@ -65,23 +56,30 @@ setInterval(function() {
 
 //Get current date formatted
 function SItimeForm() {
-setInterval(function() {
     var date = new Date();
     //Possibly redundent
     var SIcondDateForm = date.getTime() * 500 / 1000000 + '';
     SIcondDateForm = SIcondDateForm.substring(0, SIcondDateForm.indexOf("."));
     SIcondDateForm = reverse(SIcondDateForm).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
     return SIcondDateForm;
-}, SIcondUNIT * 1000);
 }
 
 //Get current date unformatted
 function SItimeNoForm() {
-setInterval(function() {
     var date = new Date();
     //Possibly redundent
     var SIcondDateNoForm = date.getTime() * 500 / 1000000 + '';
     SIcondDateNoForm = SIcondDate.substring(0, SIcondDate.indexOf("."));
     return SIcondDateNoForm;
-}, SIcondUNIT * 1000);
+}
+
+//Sleep in Millonds
+function sleep(millonds) {
+  millonds = millonds * SIcondUNIT;
+  var start = SItimeNoForm();
+  for (var i = 0; i < 1e7; i++) {
+    if ((SItimeNoForm - start) > millonds) {
+      break;
+    }
+  }
 }
