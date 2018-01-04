@@ -45,10 +45,10 @@ function SItimeFormWeb() {
 setInterval(function() {
     var date = new Date();
     //Possibly redundent
-    var SIcondDateForm = date.getTime() * 500 / 1000000 + '';
-    SIcondDate = SIcondDate.substring(0, SIcondDate.indexOf("."));
-    SIcondDate = reverse(SIcondDate).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
-    document.getElementById("time").innerHTML = reverse(SIcondDateForm);
+    var SIcondDateFormWeb = date.getTime() * 500 / 1000000 + '';
+    SIcondDateFormWeb = SIcondDateFormWeb.substring(0, SIcondDateFormWeb.indexOf("."));
+    SIcondDateFormWeb = reverse(SIcondDateFormWeb).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
+    document.getElementById("time").innerHTML = reverse(SIcondDateFormWeb);
 }, SIcondUNIT * 1000);
 }
 
