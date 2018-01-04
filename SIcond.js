@@ -51,16 +51,37 @@ setInterval(function() {
 }, SIcondUNIT * 1000);
 }
 
-//Get current date
-function SItime() {
+//Get current date formatted for HTML
+function SItimeFormWeb() {
 setInterval(function() {
     var date = new Date();
     //Possibly redundent
-    var SIcondDate = date.getTime() * 500 / 1000000 + '';
+    var SIcondDateForm = date.getTime() * 500 / 1000000 + '';
     SIcondDate = SIcondDate.substring(0, SIcondDate.indexOf("."));
     SIcondDate = reverse(SIcondDate).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
-    document.getElementById("time").innerHTML = reverse(SIcondDate);
+    document.getElementById("time").innerHTML = reverse(SIcondDateForm);
 }, SIcondUNIT * 1000);
 }
 
+//Get current date formatted
+function SItimeForm() {
+setInterval(function() {
+    var date = new Date();
+    //Possibly redundent
+    var SIcondDateForm = date.getTime() * 500 / 1000000 + '';
+    SIcondDateForm = SIcondDateForm.substring(0, SIcondDateForm.indexOf("."));
+    SIcondDateForm = reverse(SIcondDateForm).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
+    return SIcondDateForm;
+}, SIcondUNIT * 1000);
+}
 
+//Get current date unformatted
+function SItimeNoForm() {
+setInterval(function() {
+    var date = new Date();
+    //Possibly redundent
+    var SIcondDateNoForm = date.getTime() * 500 / 1000000 + '';
+    SIcondDateNoForm = SIcondDate.substring(0, SIcondDate.indexOf("."));
+    return SIcondDateNoForm;
+}, SIcondUNIT * 1000);
+}
