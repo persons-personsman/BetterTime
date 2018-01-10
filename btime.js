@@ -36,7 +36,7 @@ setInterval(function() {
     megond = 0;
     gigond++;
   }
-  document.getElementById("counter").innerHTML = (gigond + ":" + megond + ":" + kilond + ":" + hectond + ":" + SIcond);
+  document.getElementById("counter").innerHTML = (gigond + ":" + megond + ":" + kilond + ":" + hectond + ":" + second);
 }, secondUNIT * 1000);
 }
 
