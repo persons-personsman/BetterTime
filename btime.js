@@ -41,7 +41,6 @@ setInterval(function() {
 }
 
 //Get current date formatted for HTML
-function BTFormWeb() {
 setInterval(function() {
     var date = new Date();
     //Possibly redundent
@@ -50,7 +49,7 @@ setInterval(function() {
     BTDateFormWeb = reverse(BTDateFormWeb).InsertAt(':',1).InsertAt(':',3).InsertAt(':',5).InsertAt(':',7).InsertAt(':',9).InsertAt(':',11).InsertAt(':',13).InsertAt(':',15);
     document.getElementById("time").innerHTML = reverse(BTDateFormWeb);
 }, secondUNIT * 1000);
-}
+
 
 //Get current date formatted
 function BTForm() {
